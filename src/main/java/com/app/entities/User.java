@@ -2,14 +2,21 @@ package com.app.entities;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
 import com.app.enums.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,8 +25,6 @@ import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Getter
 @Setter
 @Entity
@@ -47,13 +52,16 @@ public class User extends BaseEntity {
 	@Column
 	private Role role;
 
-//	@OneToMany(mappedBy = "user")
-//	private List<Order> orders;
+	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("user")
+	private Set<Order> orders;
 
-//	@OneToMany(mappedBy = "user")
-//	private List<TestDrive_booking> bookings;
-//
-//	@OneToMany(mappedBy = "user")
-//	private List<Payment> payments;
+	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
+	@JsonIgnoreProperties("user")
+	private Set<TestDriveBooking> bookings;
+
+	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
+	@JsonIgnoreProperties("user")
+	private Set<Payment> payments;
 
 }

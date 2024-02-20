@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,8 +21,6 @@ import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Getter
 @Setter
 @Entity
@@ -29,12 +30,14 @@ public class Payment extends BaseEntity {
 
 	private String payment_status;
 	
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name = "user_id",referencedColumnName = "id")
-//	private User user;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id",referencedColumnName = "id")
+	@JsonIgnoreProperties("payments")
+	private User user;
 //	
 //	@OneToOne(cascade = CascadeType.ALL)
 //	@JoinColumn(name = "order_id",referencedColumnName = "id")
+//	@JsonBackReference
 //	private Order order;
 
 }

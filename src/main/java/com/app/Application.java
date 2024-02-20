@@ -11,13 +11,14 @@ public class Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
+		System.out.println("Started Car Bazaar Application ");
 	}
 
-	@Bean // equivalent to <bean id ..../> in xml file
-	public ModelMapper mapper() {
-		ModelMapper modelMapper = new ModelMapper();
-		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-		return modelMapper;
-	}
+//	@Bean // equivalent to <bean id ..../> in xml file
+//	public ModelMapper mapper() {
+//		ModelMapper modelMapper = new ModelMapper();
+//		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+//		return modelMapper;
+//	}
 
 }

@@ -24,23 +24,23 @@ import lombok.ToString;
 @Getter
 @Setter
 @Entity
-public class Vehicle_varient extends BaseEntity {
+public class VehicleVariant extends BaseEntity {
 	@Column(length = 40)
 	private String type;
-//	@Column(length = 40)
-//	private String color;
-//	@Column(length = 40)
-//	private String varient_name;
-//	@Column
-//	private LocalDate luanch_date;
-//	@Column(length = 400)
-//	private String description;
-//	@Column
-//	private boolean isAvailable;
-//	@Column
-//	private double exShowroom_price;
-//	@Column(length = 400)
-//	private String features;
+	@Column(length = 40)
+	private String color;
+	@Column(length = 40)
+	private String varient_name;
+	@Column
+	private LocalDate luanch_date;
+	@Column(length = 400)
+	private String description;
+	@Column
+	private boolean isAvailable;
+	@Column
+	private double exShowroom_price;
+	@Column(length = 400)
+	private String features;
 //	@OneToMany(mappedBy = "VehicleVarientId")
 //	private List<TestDriveVehicle> testDriveVehicles ;
 //	@ManyToOne

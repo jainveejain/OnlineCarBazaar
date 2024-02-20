@@ -12,33 +12,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.entities.Cart;
-import com.app.services.ICartService;
+import com.app.entities.VehicleVariant;
+import com.app.services.IVehicleVariantService;
 
 @RestController
-@RequestMapping("/cart")
-public class CartController {
+@RequestMapping("/vehicleVariant")
+public class VehicleVariantController {
 
 	@Autowired
-	private ICartService cartService;
+	private IVehicleVariantService vvService;
 	
 	@GetMapping
-	private List<Cart> getAll(){
-		return cartService.getAll();
+	private List<VehicleVariant> getAll(){
+		return vvService.getAll();
 	}
 	
 	@PostMapping
-	private Cart addCart(@RequestBody Cart cart){
-		return cartService.add(cart);
+	private VehicleVariant addVehicleVariant(@RequestBody VehicleVariant v){
+		return vvService.add(v);
 	}
 	
 	@PutMapping
-	private Cart modifyCart(@RequestBody Cart cart){
-		return cartService.add(cart);
+	private VehicleVariant modifyVehicleVariant(@RequestBody VehicleVariant v){
+		return vvService.add(v);
 	}
 	
 	@DeleteMapping
-	private void modifyCart(@RequestParam Long id){
-		cartService.delete(id);
+	private void modifyVehicleVariant(@RequestParam Long id){
+		vvService.delete(id);
 	}
 }

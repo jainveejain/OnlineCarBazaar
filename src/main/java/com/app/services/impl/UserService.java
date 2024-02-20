@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.entities.User;
-import com.app.repositories.UserRepositories;
+import com.app.repositories.UserRepository;
 import com.app.services.IUserService;
 
 @Service
 public class UserService implements IUserService{
 
 	@Autowired
-	private UserRepositories userRepo ;
+	private UserRepository userRepo ;
 	
 	@Override
 	public List<User> getAll() {

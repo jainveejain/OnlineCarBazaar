@@ -30,20 +30,20 @@ public class Order extends BaseEntity {
 	@Column(length = 40)
 	private int vehicle_id;
 	
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name = "userId")
-//	private User user;
+	@Column(precision=10)
+	private double final_price;
 	
-//	@Column(precision=10)
-//	private double final_price;
+	@Column(length = 100)
+	private String delivery_address;
 	
-//	@Column(length = 100)
-//	private String delivery_address;
-//	
-//	@Column
-//	private int varient_id;
+	@Column
+	private int varient_id;
 	
 //	@OneToOne(mappedBy = "order")
 //	private Payment payment;
+	
+//	@ManyToOne(fetch = FetchType.EAGER)
+//	@JoinColumn(name = "userId")
+//	private User user;
 
 }

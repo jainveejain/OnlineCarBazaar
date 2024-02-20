@@ -23,20 +23,20 @@ import lombok.ToString;
 @Getter
 @Setter
 @Entity
-public class TestDrive_booking extends BaseEntity {
+public class TestDriveBooking extends BaseEntity {
 
 	@Column(length = 40)
 	private String vehicle;
-//	@Column(length = 40)
-//	private String varient;
-//	@Column
-//	private Date schedule_date;
+	@Column(length = 40)
+	private String varient;
+	@Column
+	private Date schedule_date;
+	@Column(length = 100)
+	private String delivery_address;
 //	
 ////	@ManyToOne(fetch = FetchType.EAGER)
 ////	@JoinColumn(name = "userId")
 ////	private User user;
 //	
-//	@Column(length = 100)
-//	private String delivery_address;
 
 }

@@ -27,7 +27,7 @@ public class Payment extends BaseEntity {
 
 	private String payment_type;
 
-//	private String payment_status;
+	private String payment_status;
 	
 //	@ManyToOne(fetch = FetchType.EAGER)
 //	@JoinColumn(name = "user_id",referencedColumnName = "id")

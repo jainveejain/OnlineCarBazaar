@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.entities.Vehicle;
-import com.app.repositories.VehicleRepositories;
+import com.app.repositories.VehicleRepository;
 import com.app.services.IVehicleService;
 
 @Service
 public class VehicleService implements IVehicleService {
 
 	@Autowired
-	private VehicleRepositories vehicleRepo;
+	private VehicleRepository vehicleRepo;
 
 	@Override
 	public List<Vehicle> getAll() {

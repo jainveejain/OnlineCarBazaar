@@ -24,11 +24,11 @@ public class TestDriveVehicle extends BaseEntity {
 //	@ManyToOne
 //	@JoinColumn( name = "VehicleVarientId")
 //	private Vehicle_varient varient;
-//	
-//	@Column(length = 40)
-//	private int rto_number;
-//	@Column(length = 40)
-//	private boolean available_city;
+	
+	@Column(length = 40)
+	private int rto_number;
+	@Column(length = 40)
+	private boolean available_city;
 	@Column(length = 40)
 	private boolean available_state;
 

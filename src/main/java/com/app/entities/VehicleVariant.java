@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -41,7 +43,9 @@ public class VehicleVariant extends BaseEntity {
 	private String features;
 //	@OneToMany(mappedBy = "VehicleVarientId")
 //	private List<TestDriveVehicle> testDriveVehicles ;
-//	@ManyToOne
-//	@JoinColumn(name = "vehicle")
-//	private Vehicle vehicle;
+	
+	@ManyToOne
+	@JoinColumn(name = "vehicle")
+	@JsonIgnoreProperties("varient")
+	private Vehicle vehicle;
 }

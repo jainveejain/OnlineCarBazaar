@@ -13,4 +13,6 @@ public interface IUserService {
 	public User updateUser(User user);
 	
 	public void deleteUser(Long id);
+	
+	public User getUserByEmail(String email);
 }

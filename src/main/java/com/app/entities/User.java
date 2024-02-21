@@ -33,6 +33,8 @@ public class User extends BaseEntity {
 	private String firstName;
 	@Column(length = 40)
 	private String lastName;
+	@Column(length = 40)
+	private String email;
 	@Column
 	private LocalDate dob;
 	@Column(length = 100)

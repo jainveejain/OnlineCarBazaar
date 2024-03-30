@@ -38,7 +38,7 @@ const Login = (props) => {
 
 
         // Log in a user using email and password
-        const logIn = () => {
+       // const logIn = () => {
             fetch('http://localhost:8080/auth', {
                 method: 'POST',
                 headers: {
@@ -57,14 +57,14 @@ const Login = (props) => {
                         window.alert('Wrong email or password')
                     }
                 })
-        }
+      //  }
 
-        logIn();
+      //  logIn();
     }
 
     return (
-        <div className={'mainContainer'}>
-            <div className={'titleContainer'}>
+        <div className='mainContainer'>
+            <div className='titleContainer'>
                 <div>Login</div>
             </div>
             <br />
@@ -72,8 +72,8 @@ const Login = (props) => {
                 <input
                     value={email}
                     placeholder="Enter your email here"
-                    onChange={(ev) => setEmail(ev.target.value)}
-                    className={'inputBox'}
+                    onChange={(ev)=>{ setEmail(ev.target.value)}}
+                    className='inputBox'
                 />
                 <label className="errorLabel">{emailError}</label>
             </div>
@@ -84,13 +84,16 @@ const Login = (props) => {
                     value={password}
                     placeholder="Enter your password here"
                     onChange={(ev) => setPassword(ev.target.value)}
-                    className={'inputBox'}
+                    className='inputBox'
                 />
                 <label className="errorLabel">{passwordError}</label>
             </div>
             <br />
             <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'} />
+            </div>
+            <div className='inputContainer'>
+                <a href='/register'>Register</a>
             </div>
         </div>
     )

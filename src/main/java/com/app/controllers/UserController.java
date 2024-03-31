@@ -31,7 +31,12 @@ public class UserController {
 	
 	@PostMapping
 	private User addUser(@RequestBody User user){
-		return userService.addUser(user);
+		String email = user.getEmail();
+		User userObj = userService.getUserByEmail(email);
+		if(userObj==null) {
+			return userService.addUser(user);
+		}
+		return userObj;    //either we can send null value
 	}
 	
 	@PutMapping

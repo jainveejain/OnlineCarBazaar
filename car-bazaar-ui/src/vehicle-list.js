@@ -31,7 +31,8 @@ function VehicleList() {
              <Card.Text>
               {car.type}
              </Card.Text>
-             <Button variant="primary"> {car.varient.exShowroom_price} Buy Now</Button>
+             <Button style={{margin: "8px",width:"100%", backgroundColor:'#a19d11cf'}} variant="primary"> {car.varient.exShowroom_price} Buy Now</Button>
+             <Button style={{margin: "8px",width:"100%", backgroundColor:'orange'}} variant="primary">Add to Cart</Button>
            </Card.Body>
          </Card>
         ))}

@@ -22,6 +22,10 @@ function VehicleList() {
     }
   };
 
+  // "{"name": "ponik"}" - JSON String
+  // { "name" : "ponik"} - JSON Obkect
+
+
   return (
     <div className="car-list" style={{width : "100vw"}}>
       <div className="card-container">

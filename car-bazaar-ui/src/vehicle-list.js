@@ -14,6 +14,8 @@ function VehicleList() {
     try {
       const response = await fetch('http://localhost:8080/vehicle');
       const data = await response.json();
+      console.log('********************************');
+      console.log(data);
       setCars(data); // Assuming the API response is an array of car objects
     } catch (error) {
       console.error('Error fetching data:', error);
